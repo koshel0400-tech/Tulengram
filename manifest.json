@@ -3,8 +3,8 @@
   "short_name": "тюлень",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#121212",
-  "theme_color": "#121212",
+  "background_color": "#f6f8fb",
+  "theme_color": "#00A9FF",
   "orientation": "portrait",
   "icons": [
     {
@@ -13,4 +13,5 @@
       "type": "image/png"
     }
   ]
-]
+}
+
