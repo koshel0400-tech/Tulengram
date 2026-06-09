@@ -275,13 +275,24 @@
         let dataChannel;
         let pendingRole = null;
         
-        // Мощный список STUN серверов для связи через разные Wi-Fi и мобильные сети
+        // Мощный список STUN и TURN серверов, пробивающий симметричный NAT мобильных сетей и роутеров
         const ICE_SERVERS = { 
             iceServers: [
                 { urls: 'stun:stun.l.google.com:19302' },
                 { urls: 'stun:stun1.l.google.com:19302' },
                 { urls: 'stun:stun2.l.google.com:19302' },
-                { urls: 'stun:stun.cloudflare.com:3478' }
+                { urls: 'stun:stun.cloudflare.com:3478' },
+                // Добавляем бесплатные публичные TURN-серверы (используют open-source проект Metered)
+                {
+                    urls: 'turn:openrelay.metered.ca:80',
+                    username: 'openrelayproject',
+                    credential: 'openrelayproject'
+                },
+                {
+                    urls: 'turn:openrelay.metered.ca:443',
+                    username: 'openrelayproject',
+                    credential: 'openrelayproject'
+                }
             ] 
         };
 
